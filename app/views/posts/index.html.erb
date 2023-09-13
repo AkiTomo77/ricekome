@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheets" type="text/css" href="index.scss">
+</head>
+
+<div class="slide" id="makeImg">
+  <%= link_to image_tag("riceslide1.jpg", class:"logo-image"), "/" %>
+   
+  <%= link_to image_tag("riceslide2.jpg", class:"logo-image"), "/posts/new" %>
+
+  <%= link_to image_tag("riceslide3.jpg", class:"logo-image"), "/perfumes" %>
+  
+</div>
+
+<div class="posts-container">
+<h3>一覧ページ</h3>
+<%= link_to "新規投稿へ", new_post_path %>
+
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+  <% @posts.each do |t| %>
+    <div class="post">
+      <p style="line-height: 350%">
+      <b>品種：</b><%= t.rice_name %><br>
+      </p>
+      <p style="line-height: 350%">
+      <b>投稿者：</b>
+        <% if user_signed_in? %>
+          <%= link_to t.user.name, user_path(t.user.id) %>
+        <% else %>
+          <%= link_to t.user.name, new_user_session_path %>
+        <% end %><br>
+
+      </p>
+      <p style="line-height: 350%">
+      <b>産地：</b><%= t.rice_from %><br>
+      </p>
+      <p style="line-height: 350%">
+      <b>風味：</b><%= t.rice_flavor %><br>
+      </p>
+      <p style="line-height: 350%">
+      <b>感想：</b><%= t.about %><br>
+      </p>
+ 
+      <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+          <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+              <p>いいねを取り消す</p><%= t.likes.count %>
+          <% end %>
+      <% else %>
+          <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+              <p>いいね</p><%= t.likes.count %>
+          <% end %>
+      <% end %>
+      <% else %>
+        <p style="line-height: 350%">
+          <b>いいねの数：</b><%= t.likes.count %>
+        </p>
+    </div>
+  <% end %>
+
+<p><%= link_to "詳細", post_path(t.id) %>&nbsp;&nbsp;
+    <% if user_signed_in? && current_user.id == t.user_id %>
+      <%= link_to "編集する", edit_post_path(t.id) %>&nbsp;&nbsp;
+      <%= link_to "削除する", post_path(t.id), method: :delete %>
+    <% end %>
+<% end %>
+
+<h3>いいねランキング</h3>
+<% @all_ranks.each.with_index(1) do |post, i| %><p><br>
+  第
+  <%= i %>
+  位
+<%= post.rice_name %>
+<% end %>
+
+<h3>投稿を検索</h3>
+  <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %><br>
+   <%= submit_tag '検索する', class: "button"  %>
+  <% end %>
+
+<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  <% Tag.all.each do |t| %>
+      <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+  <% end %>
+  <%= submit_tag '検索', class: "button"   %><br>
+
+  <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+    <%= text_field_tag :tag %><br>
+    <%= submit_tag 'タグを追加' , class: "button"  %>
+  <% end %>
+
+  
+<% end %>
+<%= link_to "診断", perfumes_path %>
+
+<html>
+
+

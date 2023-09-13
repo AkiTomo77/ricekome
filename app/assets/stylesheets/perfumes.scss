@@ -1,0 +1,361 @@
+// Place all the styles related to the perfumes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@charset "utf-8";
+
+/* reset style
+------------------------------------------ */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:top}
+article,aside,figure,footer,header,nav,section,details,summary{display:block}
+html{overflow-y:scroll;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+/* a{color:#444444;margin:0;padding:0;text-decoration:none} */
+ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+th{font-weight:700;vertical-align:top;word-break:break-all;word-wrap:break-word}
+td{font-weight:400;vertical-align:top;word-break:break-all;word-wrap:break-word}
+
+body {
+    font-family: "メイリオ", Meiryo,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    color: #535353;
+}
+
+.wf-mplus1p { font-family: "Mplus 1p"; }
+
+
+#commonHeader {
+    position: relative;
+    margin: 0 auto;
+  
+    
+    color: #5391BA;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.25em;
+    border-top: solid 2px #6cb4e4;
+    border-bottom: solid 2px #6cb4e4;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+
+}
+#commonHeader section#flows {
+    margin: 0 auto;
+    max-height: 170px;
+    position: relative;
+    
+    font-size: 360%;
+    text-align: center;
+    padding:5px 5px 30px;
+
+}
+
+#flowsHead{
+    font-size: 100%;
+    text-align: center;
+    padding-top: 30px;
+    padding:30px 5px 5px;
+
+}
+
+#commonHeader section#flows a.homeLink {
+    width: 555px;
+    height: 58px;
+    position: absolute;
+    left: 200px;
+    top: 77px;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+article:after, section:after, .clrFx:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.sense {
+    padding: 0 0 35px 0;
+    /* margin: 0 auto; */
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+
+.hsd_question {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 65px;
+    margin-top: 50px;
+}
+.hsd_question ul {
+    position: relative;
+    left: 50%;
+    float: left;
+}
+.hsd_question li {
+    position: relative;
+    left: -50%;
+    float: left;
+}
+#pageBody p {
+    margin-bottom: 1em;
+}
+.hsd_question_txt {
+    padding: 8px 10px 0px 12px;
+    font-size: 25px;
+    color: #282828;
+    text-align: center;
+    font-family: "游明朝", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+}
+.hds_answer {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 85px;
+}
+.hds_answer ul {
+    position: relative;
+    left: 50%;
+    float: left;
+}
+.hds_answer li {
+    position: relative;
+    left: -50%;
+    float: left;
+}
+.img-yes {
+    font-size: 10px;
+}
+
+#wrapper {
+    position: relative;
+    clear: both;
+}
+.margin {
+    background-color: #fff;
+    width: 50px;
+    height: 151px;
+}
+.qalist{
+    min-width:320px;
+    max-width:800px;
+    margin:0 auto;
+}
+.qalist li {
+    font-size:130%;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.qbox{
+    text-align:center;
+}
+.qabox{
+    width:300px;
+    margin: 0 auto;
+}
+
+.question {
+  font-size:15px;
+  line-height:1.5em;
+  padding:10px;
+}
+.question:after{
+    clear:both;
+}
+.answer {
+  font-size:15px;
+  line-height:1.5em;
+  color:#000000;
+  padding:10px;
+}
+.sig{
+  text-align:right;
+  font-size:xx-small;
+}
+
+
+.qabtn {
+    position: relative;
+
+}
+.qabtn::before,
+.qabtn::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.qabtn,
+.qabtn::before,
+.qabtn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+.qabtn:active {
+  top: 3px;
+  box-shadow: none;
+}
+.qabtny{
+    margin-right:30px;
+}
+
+.btnBox{
+    text-align:center;
+    width: 90px;
+    float: left;
+    height: 90px;
+    padding: 20px;
+    border-radius: 90px;
+    cursor :pointer;
+    
+    color: #fff;
+    font-size:150%;
+    line-height: 90px;
+    
+    margin-top:30px;
+}
+
+.btnBox_y{
+    background-color: #FF8DB4;
+    margin-right: 40px;
+}
+
+.btnBox_n{
+    background-color: #62D7DE;
+}
+
+.btnBox_x{
+    background-color: #94FF99;
+}
+
+.btnBox_o{
+    background-color: #006699;
+    margin-left: 40px;
+}
+
+.btnBox_u{
+    background-color: #C60710;
+  margin-right: 40px;
+}
+
+.btnBox_w{
+    background-color: #55468C;
+  margin-left: 40px;
+}
+
+.btnBox_z{
+    background-color: #F2D680;
+   
+}
+
+.btnBox_r{
+    background-color: #F2D680;
+    font-size: 18px;
+
+   
+}
+
+
+
+.q{
+    font-family: "Mplus 1p";
+    font-size:300%;
+    height: 50px;
+    color:#F55257;
+}
+
+
+.point_box {
+    background: -webkit-repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    padding: 4px;
+    margin: 10px 5px 10px;
+    font-size:110%;
+}
+
+.point_box .box {
+    padding: 5px 5px 1px;
+    background-color: #fff;
+}
+
+.point_box .title {
+    font-weight: bold;
+    font-size: 115%;
+    position: relative;
+    line-height: 1.2;
+}
+.point_box .title{
+    position: relative;
+    border-top: solid 2px #80c8d1;
+    border-bottom: solid 2px #80c8d1;
+    background: #f4f4f4;
+    line-height: 1.4;
+    padding: 0.4em 0.5em;
+    margin: 1em 0 0.5em;
+    text-align: left;
+}
+
+.point_box .title:after {/*タブ*/
+    position: absolute;
+    font-family: FontAwesome,'Quicksand','Avenir','Arial',sans-serif;
+    content: '\f0a7\ Result';
+    background: #80c8d1;
+    color: #fff;
+    left: 0px;
+    bottom: 100%;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 7px 3px;
+    font-size: 0.7em;
+    line-height: 1;
+    letter-spacing: 0.05em;
+}
+
+.point_box .box .txt {
+    padding: 10px 10px 0px;
+    line-height: 1.45;
+    text-align: left;
+}
+.bg-y {
+    background: #FFFF73;
+}
+.fs-18 {
+    font-size: 120%;
+    font-weight: bold;
+    line-height: 140%;
+}
+.redtext, .red {
+    color: #D03F37;
+}
+.img {
+    margin: 0 auto 10px;
+    max-width: 500px;
+}
+.img img {
+    max-width: 100%;
+}
+
+#pageBody .title p{
+    margin:3px 0 1px;
+}
+
+.square_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px #ff7c5c;/*左線*/
+    color: #ff7c5c;/*文字色*/
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.square_btn:active,
+.square_btn:hover {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+}

@@ -1,0 +1,62 @@
+.posts-container {
+    width: 50%;
+    margin: 10px auto;
+  }
+  h3 {
+    width: 100px;
+    margin: 30px auto;
+    text-align: center;
+    padding-top: 30px;
+  }
+  .post {
+    border-top: solid #f8b600;
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  .main-box {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .time {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .button {
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+
+  .slide {
+    position   : relative;
+    overflow   : hidden;
+    margin     : auto;
+    margin-top : 65px;
+    width      : 792px;
+    height     : 522px;    
+    background : white;
+  }
+
+  .slide a{
+    
+    display    : block;
+    position   : absolute;
+    width      : 792px;
+    height     : 522px;
+    left       : 100%;
+    animation  : slideAnime 18s ease infinite;
+  }
+
+
+
+  .slide a:nth-of-type(1) { animation-delay: 0s }
+  .slide a:nth-of-type(2) { animation-delay: 6s }
+  .slide a:nth-of-type(3){ animation-delay: 12s }
+
+  @keyframes slideAnime{
+    0% { left: 792px }
+    3% { left: 0     }
+   30% { left: 0     }
+   33% { left: -792px }
+  100% { left: -792px }
+ }

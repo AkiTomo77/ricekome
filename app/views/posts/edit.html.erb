@@ -1,0 +1,43 @@
+<link rel="stylesheets" type="text/css" href="new.scss">
+
+<div class="akiyama">
+<h2>投稿編集</h2>
+<%= form_for @post do |f| %>
+
+  <div class="field">
+    <%= f.label :"品種　" %>
+    <%= f.text_field :rice_name, :size => 30 ,placeholder:"（例）コシヒカリ"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :"産地　" %>
+    <%= f.text_field :rice_from, :size => 30,placeholder:"（例）新潟" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"風味　" %>
+    <%= f.text_field :rice_flavor, :size => 30 ,placeholder:"（例）甘い"%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"感想　"  %>
+    <%= f.text_field :about, :size => 30 ,placeholder:"（例）おいしい"%>
+  </div>
+
+  <div class='form-group'>
+    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+      <div class='form-check'>
+          <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+
+    <%= f.submit "編集する" , class: "button"%>
+<% end %>
+
+</div>
+
+  <%= link_to "一覧に戻る", posts_path %>

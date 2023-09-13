@@ -1,0 +1,47 @@
+<link rel="stylesheets" type="text/css" href="user_show.scss">
+
+<h1>マイページ</h1><br>
+<div class="mypage">
+  <b><p>名前 : <%= @user.name %></p><br>
+  <b><p>メールアドレス : <%= @user.email %></p><br>
+  <b><p>プロフィール : <%= @user.profile %></p><br>
+
+    <% if current_user.id == @user.id %>
+      <%= link_to "編集する", edit_user_registration_path %><br>
+    <% end %><br>
+</div>
+
+<h2>ユーザーの投稿一覧</h2>
+
+<div class="postslist3">
+  <div class="postslist2">
+    <div class="postslist">
+      <% @user.posts.each do |t| %>
+        <div class="post2">
+          <p style="line-height: 350%">
+          <b>品種：</b><%= t.rice_name %><br>
+          </p>
+
+          <p style="line-height: 350%">
+          <b>投稿者：</b><%= link_to t.user.name, user_path(t.user.id) %><br>
+          </p>
+
+          <p style="line-height: 350%">
+          <b>産地：</b><%= t.rice_from %><br>
+          </p>
+
+          <p style="line-height: 350%">
+          <b>味わい：</b><%= t.rice_flavor %><br>
+          </p>
+
+          <p style="line-height: 350%">
+          <b>感想：</b><%= t.about %><br>
+          </p>
+        </div>
+      <% end %><br>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to "一覧に戻る", posts_path %><br>

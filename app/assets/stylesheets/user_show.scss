@@ -1,0 +1,58 @@
+.mypage {
+  width: 50%;
+  margin: 10px auto;
+}
+
+h1 {
+  width: 100px;
+  margin: 30px auto;
+  text-align: center;
+  padding-top: 30px;
+}
+
+h2{
+ text-align: center;
+}
+
+.postslist3{
+  display: flex;
+  justify-content: center;
+}
+
+.postslist2{
+  display: inline-block;
+}
+
+.postslist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+.postslist::before{
+  margin: 2em 0.5em ;
+  padding:2.5em 2em 2em;
+  content:"";
+  display: block;
+  width:20%;
+  order:1;
+}
+.postslist::after{
+  margin: 2em 0.5em ;
+  padding:2.5em 2em 2em;
+  content:"";
+  display: block;
+  width:20%;
+}
+
+.post2{
+  border: 2px solid #f8b600;
+  border-radius: 10px;
+  margin: 2em 0.5em ;
+  background-color: white;/*ボックス背景色*/
+  padding:2.5em 2em 2em;/*ボックス内側余白*/
+  position:relative;/*配置(ここを基準に)*/
+  height: 265px;
+  width: 170px;
+}
+
+

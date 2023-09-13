@@ -1,0 +1,150 @@
+<header id="commonHeader">
+<section id="flowsHead" class="wf-mplus1p">あなたにあったお米がわかる</section>
+<section id="flows" class="wf-mplus1p">おこめ診断</section>
+</header>
+
+<div id="wrapper">
+   <div class="sense">
+        <article id="pageBody">
+
+            <div class="point_box">
+            <div class="box">
+            <div class="txt">
+            <p>下記の質問に答えてみてください。あなたにぴったりのお米がわかります!</p>
+            </div>
+            </div>
+            </div>
+
+
+            <ul class="qalist wf-mplus1p">
+
+            <li id="1" class="question">
+                <a name="#1"></a>
+                <div class="qbox"><span  class="q">Q.</span>お米をお供（おかずやふりかけ）が無くても食べられますか?</div>
+                <div class="qabox">
+                    <a href="#2" onclick="show(2)" class="qabtn"><div class="btnBox btnBox_y">はい</div></a>
+                    <a href="#3" onclick="show(3)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
+                </div>
+            </li>
+            <li id="2" class="question" style="display:none;">
+                <a name="#"></a>
+                <div class="qbox"><span  class="q">Q.</span>お米の香りを楽しみたいですか？</div>
+                <div class="qabox">
+                    <a href="#101" onclick="show(101)" class="qabtn"><div class="btnBox btnBox_y">はい</div></a>
+                    <a href="#102" onclick="show(102)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
+                </div>
+            </li>
+            <li id="3" class="question" style="display:none;">
+                <a name="#"></a>
+                <div class="qbox"><span  class="q">Q.</span>〜ですか？</div>
+                <div class="qabox">
+                    <a href="#103" onclick="show(103)" class="qabtn"><div class="btnBox btnBox_y">YES</div></a>
+                    <a href="#104" onclick="show(104)" class="qabtn"><div class="btnBox btnBox_n">NO</div></a>
+                </div>
+            </li>
+            </ul>
+
+            <div class="answerList">
+
+                <div id="101" style="display:none;" class="answer point_box">
+                    <div class="box">
+                        <div class="title">
+                        <p>あなたに勧めるおこめは<span class="fs-18"><span class="bg-y">『コシヒカリ』</span></span>です！</p>
+                        </div>
+                    <div class="txt">
+                        <div class="img">
+                        <%= image_tag '' %></div>
+                        <p>説明文</p>
+<p>詳細</p>
+                        <p><%= link_to "一覧に戻る", posts_path %></p>
+                    </div>
+                    </div>
+                </div>
+                <div id="102" style="display:none;" class="answer point_box">
+                    <div class="box">
+                        <div class="title">
+                        <p>あなたに勧める〇〇は<span class="fs-18"><span class="bg-y">『〇〇』</span></span>です！</p>
+                        </div>
+                    <div class="txt">
+                        <div class="img">
+                        <%= image_tag '' %></div>
+                        <p>説明文「タイトル」</p>
+<p>詳細を記載</p>
+<p>詳細を記載</p>
+<p>詳細を記載</p>
+                        <p><%= link_to "一覧に戻る", posts_path %></p>
+                    </div>
+                    </div>
+                </div>
+                <div id="103" style="display:none;" class="answer point_box">
+                    <div class="box">
+                        <div class="title">
+                        <p>あなたに勧める〇〇は<span class="fs-18"><span class="bg-y">『〇〇』</span></span>です！</p>
+                        </div>
+                    <div class="txt">
+                        <div class="img">
+                        <%= image_tag '' %></div>
+                        <p>説明文「タイトル」</p>
+<p>詳細を記載</p>
+<p>詳細を記載</p>
+<p>詳細を記載</p>
+                        <p><%= link_to "一覧に戻る", posts_path %></p>
+                    </div>
+                    </div>
+                </div>
+                <div id="104" style="display:none;" class="answer point_box">
+                    <div class="box">
+                        <div class="title">
+                        <p>あなたに勧める〇〇は<span class="fs-18"><span class="bg-y">説明文「タイトル」</span></span>です！</p>
+                        </div>
+                    <div class="txt">
+                        <div class="img">
+                        <%= image_tag '' %></div>
+                        <p>説明文「タイトル」</p>
+<p>詳細を記載</p>
+<p>詳細を記載</p>
+<p>詳細を記載</p>
+                    </div>
+                    </div>
+                </div>
+
+
+
+        </article>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function(){
+   $('a[href^=#]').click(function() {
+      var speed = 600;
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+$(function(){
+    h = $(window).height();
+    h = h-30;
+    $(".question").css("min-height", h + "px");
+    $(".answerList .box").css("min-height", h + "px");
+    
+});
+function show(idName){ 
+    $("#" + idName).show();
+}
+
+</script>
+
+<%= link_to "一覧に戻る", posts_path %>
+</body>
+</html>
+
+
+
+

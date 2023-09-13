@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag 'show', :media => "all" %>
+
+<div class="akitomo"> 
+<h4>投稿詳細</h4><br>
+<div class="post2">
+  <p style="line-height: 350%">
+    <b>品種：</b><%= @post.rice_name %><br>
+  </p>
+
+  <p style="line-height: 350%">
+    <b>産地：</b><%= @post.rice_from %><br>
+  </p>
+
+  <p style="line-height: 350%">
+    <b>風味：</b><%= @post.rice_flavor %><br>
+  </p>
+
+  <p style="line-height: 350%">
+    <b>感想：</b><%= @post.about %><br>
+  </p>
+
+  <p><% @post.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+  <% end %></p><br>
+
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(@post) %>
+        <%= button_to post_like_path(@post), method: :delete do %>
+          <p>いいねを取り消す</p><%= @post.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to post_likes_path(@post), method: :post do %>
+          <p>いいね</p><%= @post.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p style="line-height: 350%">
+        <b>いいねの数：</b><%= @post.likes.count %><br>
+      </p>
+    <% end %>
+
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= link_to "編集する", edit_post_path(@post.id) %>
+      <%= link_to "削除する", post_path(@post.id), method: :delete %><br>
+    <% end %><br>
+
+
+<h2>いいねしたユーザー</h2>
+<% @post.liked_users.each do |user| %>
+  <%= user.name %>
+<% end %><br>
+
+<div class="comment-wrapper"><br>
+  <b><p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.name unless c.user.blank? %>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <p><% if user_signed_in? %>
+    <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div></p><br>
+
+<p><%= link_to "一覧に戻る", posts_path %></p><br><br>
+
+</div>
+
+</div>

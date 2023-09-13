@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rice</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+  <header>
+   <h1>MyRice</h1>
+   <div class="header-list">
+   <ul>
+    <% if user_signed_in? %>
+     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+    <li><%= link_to "新規登録", new_user_registration_path %></li>
+     <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+   </ul>
+   </div>
+
+   <div class="header-list2"><br>
+    <img src="iconichiran.png">
+    <img src="iconkensaku.png">
+    <img src="iconranking.png">
+    <img src="iconshindan.png">
+   </div>
+
+  </header>
+
+ <main>
+  <%= yield %>
+ </main>
+
+ <section id="kome">
+ </section>
+ <footer>
+  <p>Copyright © TOMOYA AKINO All Rights Reserved.</p>
+ </footer>
+</body>
+
+</html>
