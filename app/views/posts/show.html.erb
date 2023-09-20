@@ -2,7 +2,7 @@
 
 <div class="akitomo"> 
 <h4>投稿詳細</h4><br>
-<div class="post2">
+<div class="post22">
   <p style="line-height: 350%">
     <b>品種：</b><%= @post.rice_name %><br>
   </p>
@@ -44,11 +44,12 @@
       <%= link_to "削除する", post_path(@post.id), method: :delete %><br>
     <% end %><br>
 
-
-<h2>いいねしたユーザー</h2>
-<% @post.liked_users.each do |user| %>
-  <%= user.name %>
-<% end %><br>
+<div class="like">
+  <b><p>いいねしたユーザー</p>
+  <% @post.liked_users.each do |user| %>
+    <%= user.name %>
+  <% end %><br>
+</div>
 
 <div class="comment-wrapper"><br>
   <b><p>コメント一覧</p>

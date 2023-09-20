@@ -17,23 +17,23 @@
   <header>
    <h1>MyRice</h1>
    <div class="header-list">
-   <ul>
-    <% if user_signed_in? %>
-     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-    <% else %>
-    <li><%= link_to "新規登録", new_user_registration_path %></li>
-     <li><%= link_to "ログイン", new_user_session_path %></li>
-    <% end %>
-   </ul>
-   </div>
+    <ul>
+      <li>
+      <%= link_to '投稿一覧', posts_path(anchor: 'ichiran'), class: 'ichiran' %>
 
-   <div class="header-list2"><br>
-    <img src="iconichiran.png">
-    <img src="iconkensaku.png">
-    <img src="iconranking.png">
-    <img src="iconshindan.png">
-   </div>
+      </li>
+      <li><%= link_to 'ランキング', posts_path(anchor: 'likesranking'), class: 'likesranking' %></li>
+      <li><%= link_to '検索', posts_path(anchor: 'search'), class: 'search' %></li>
+      <li><%= link_to "診断", perfumes_path %></li>
 
+      <% if user_signed_in? %>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
+      <% end %>
+    </ul>
+   </div>
   </header>
 
  <main>

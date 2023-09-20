@@ -20,70 +20,80 @@
 </div>
 
 <div class="posts-container">
-<h3>一覧ページ</h3>
+<h3 id="ichiran">一覧ページ</h3>
 <%= link_to "新規投稿へ", new_post_path %>
 
 <% if user_signed_in? %>
   <%= link_to "マイページへ", user_path(current_user.id) %>
 <% end %>
 
-  <% @posts.each do |t| %>
-    <div class="post">
-      <p style="line-height: 350%">
-      <b>品種：</b><%= t.rice_name %><br>
-      </p>
-      <p style="line-height: 350%">
-      <b>投稿者：</b>
-        <% if user_signed_in? %>
-          <%= link_to t.user.name, user_path(t.user.id) %>
-        <% else %>
-          <%= link_to t.user.name, new_user_session_path %>
-        <% end %><br>
+<div class="postslist6">
+  <div class="postslist5">
+    <div class="postslist4">
+      <% @posts.each do |t| %>
+        <div class="post">
+          <p style="line-height: 350%">
+          <b>品種：</b><%= t.rice_name %><br>
+          </p>
+          <p style="line-height: 350%">
+          <b>投稿者：</b>
+            <% if user_signed_in? %>
+              <%= link_to t.user.name, user_path(t.user.id) %>
+            <% else %>
+              <%= link_to t.user.name, new_user_session_path %>
+            <% end %><br>
 
-      </p>
-      <p style="line-height: 350%">
-      <b>産地：</b><%= t.rice_from %><br>
-      </p>
-      <p style="line-height: 350%">
-      <b>風味：</b><%= t.rice_flavor %><br>
-      </p>
-      <p style="line-height: 350%">
-      <b>感想：</b><%= t.about %><br>
-      </p>
- 
-      <% if user_signed_in? %>
-      <% if current_user.already_liked?(t) %>
-          <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-              <p>いいねを取り消す</p><%= t.likes.count %>
+          </p>
+          <p style="line-height: 350%">
+          <b>産地：</b><%= t.rice_from %><br>
+          </p>
+          <p style="line-height: 350%">
+          <b>風味：</b><%= t.rice_flavor %><br>
+          </p>
+          <p style="line-height: 350%">
+          <b>感想：</b><%= t.about %><br>
+          </p>
+    
+          <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+              <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+                  <p>いいねを取り消す</p><%= t.likes.count %>
+              <% end %>
+          <% else %>
+              <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+                  <p>いいね</p><%= t.likes.count %>
+              <% end %>
           <% end %>
-      <% else %>
-          <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-              <p>いいね</p><%= t.likes.count %>
-          <% end %>
+          <% else %>
+            <p style="line-height: 350%">
+              <b>いいねの数：</b><%= t.likes.count %>
+            </p>
+        
       <% end %>
-      <% else %>
-        <p style="line-height: 350%">
-          <b>いいねの数：</b><%= t.likes.count %>
-        </p>
+
+          <%= link_to "詳細", post_path(t.id) %>&nbsp;&nbsp;
+            <% if user_signed_in? && current_user.id == t.user_id %>
+              <%= link_to "編集する", edit_post_path(t.id) %>&nbsp;&nbsp;
+              <%= link_to "削除する", post_path(t.id), method: :delete %>
+            <% end %>
+        </div> 
+          <% end %> 
+         
     </div>
+  </div>
+</div>
+  
+<div class="ranking">
+<h3 id="likesranking">いいねランキング</h3>
+  <% @all_ranks.each.with_index(1) do |post, i| %><p><br>
+    第
+    <%= i %>
+    位
+  <%= post.rice_name %>
   <% end %>
+</div>
 
-<p><%= link_to "詳細", post_path(t.id) %>&nbsp;&nbsp;
-    <% if user_signed_in? && current_user.id == t.user_id %>
-      <%= link_to "編集する", edit_post_path(t.id) %>&nbsp;&nbsp;
-      <%= link_to "削除する", post_path(t.id), method: :delete %>
-    <% end %>
-<% end %>
-
-<h3>いいねランキング</h3>
-<% @all_ranks.each.with_index(1) do |post, i| %><p><br>
-  第
-  <%= i %>
-  位
-<%= post.rice_name %>
-<% end %>
-
-<h3>投稿を検索</h3>
+<h3 id="search">投稿を検索</h3>
   <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
    <%= text_field_tag :search %><br>
    <%= submit_tag '検索する', class: "button"  %>

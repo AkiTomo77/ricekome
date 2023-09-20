@@ -16,64 +16,12 @@ th{font-weight:700;vertical-align:top;word-break:break-all;word-wrap:break-word}
 td{font-weight:400;vertical-align:top;word-break:break-all;word-wrap:break-word}
 
 body {
-    font-family: "メイリオ", Meiryo,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
-    font-size: 14px;
     line-height: 1;
     color: #535353;
 }
 
-.wf-mplus1p { font-family: "Mplus 1p"; }
 
 
-#commonHeader {
-    position: relative;
-    margin: 0 auto;
-  
-    
-    color: #5391BA;
-    font-weight: bold;
-    text-align: center;
-    padding: 0.25em;
-    border-top: solid 2px #6cb4e4;
-    border-bottom: solid 2px #6cb4e4;
-    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-
-}
-#commonHeader section#flows {
-    margin: 0 auto;
-    max-height: 170px;
-    position: relative;
-    
-    font-size: 360%;
-    text-align: center;
-    padding:5px 5px 30px;
-
-}
-
-#flowsHead{
-    font-size: 100%;
-    text-align: center;
-    padding-top: 30px;
-    padding:30px 5px 5px;
-
-}
-
-#commonHeader section#flows a.homeLink {
-    width: 555px;
-    height: 58px;
-    position: absolute;
-    left: 200px;
-    top: 77px;
-    text-indent: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-article:after, section:after, .clrFx:after {
-    content: '';
-    clear: both;
-    display: block;
-}
 .sense {
     padding: 0 0 35px 0;
     /* margin: 0 auto; */
@@ -106,7 +54,6 @@ article:after, section:after, .clrFx:after {
     font-size: 25px;
     color: #282828;
     text-align: center;
-    font-family: "游明朝", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
 }
 .hds_answer {
     position: relative;
@@ -128,6 +75,7 @@ article:after, section:after, .clrFx:after {
 }
 
 #wrapper {
+    margin-top: 130px;
     position: relative;
     clear: both;
 }
@@ -214,20 +162,29 @@ article:after, section:after, .clrFx:after {
     border-radius: 90px;
     cursor :pointer;
     
-    color: #fff;
+    color: black;
     font-size:150%;
-    line-height: 90px;
+    line-height: 60px;
     
     margin-top:30px;
 }
 
 .btnBox_y{
-    background-color: #FF8DB4;
-    margin-right: 40px;
+    border: 2px solid #f8b600;
+    border-radius: 10px;
+    margin-right: 30px;
+    width: 90px;
+    height: 60px;
+    background-color: white;
+   
 }
 
 .btnBox_n{
-    background-color: #62D7DE;
+    border: 2px solid #f8b600;
+    border-radius: 10px;
+    width: 90px;
+    height: 60px;
+    background-color: white;
 }
 
 .btnBox_x{
@@ -241,45 +198,30 @@ article:after, section:after, .clrFx:after {
 
 .btnBox_u{
     background-color: #C60710;
-  margin-right: 40px;
+    margin-right: 40px;
 }
 
 .btnBox_w{
     background-color: #55468C;
-  margin-left: 40px;
+    margin-left: 40px;
 }
 
 .btnBox_z{
-    background-color: #F2D680;
-   
+    background-color: #F2D680; 
 }
 
 .btnBox_r{
     background-color: #F2D680;
     font-size: 18px;
-
-   
 }
-
-
-
-.q{
-    font-family: "Mplus 1p";
-    font-size:300%;
-    height: 50px;
-    color:#F55257;
-}
-
 
 .point_box {
-    background: -webkit-repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-    background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-    padding: 4px;
     margin: 10px 5px 10px;
     font-size:110%;
 }
 
 .point_box .box {
+
     padding: 5px 5px 1px;
     background-color: #fff;
 }
@@ -292,38 +234,24 @@ article:after, section:after, .clrFx:after {
 }
 .point_box .title{
     position: relative;
-    border-top: solid 2px #80c8d1;
-    border-bottom: solid 2px #80c8d1;
-    background: #f4f4f4;
+    border: 2px solid #f8b600;
+    border-radius: 10px;
+    background: white;
     line-height: 1.4;
     padding: 0.4em 0.5em;
     margin: 1em 0 0.5em;
     text-align: left;
 }
 
-.point_box .title:after {/*タブ*/
-    position: absolute;
-    font-family: FontAwesome,'Quicksand','Avenir','Arial',sans-serif;
-    content: '\f0a7\ Result';
-    background: #80c8d1;
-    color: #fff;
-    left: 0px;
-    bottom: 100%;
-    border-radius: 5px 5px 0 0;
-    padding: 5px 7px 3px;
-    font-size: 0.7em;
-    line-height: 1;
-    letter-spacing: 0.05em;
-}
+
 
 .point_box .box .txt {
     padding: 10px 10px 0px;
     line-height: 1.45;
     text-align: left;
 }
-.bg-y {
-    background: #FFFF73;
-}
+
+
 .fs-18 {
     font-size: 120%;
     font-weight: bold;

@@ -20,7 +20,10 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production: 
-     <<: *default
-     url: <%= ENV['DATABASE_URL'] %>
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
 
+     

@@ -1,9 +1,6 @@
-<header id="commonHeader">
-<section id="flowsHead" class="wf-mplus1p">あなたにあったお米がわかる</section>
-<section id="flows" class="wf-mplus1p">おこめ診断</section>
-</header>
 
 <div id="wrapper">
+<h2>おこめ診断</h2>
    <div class="sense">
         <article id="pageBody">
 
@@ -20,26 +17,26 @@
 
             <li id="1" class="question">
                 <a name="#1"></a>
-                <div class="qbox"><span  class="q">Q.</span>お米をお供（おかずやふりかけ）が無くても食べられますか?</div>
+                <div class="qbox">味にこだわりはないので家計に優しいお米がいい</div>
                 <div class="qabox">
-                    <a href="#2" onclick="show(2)" class="qabtn"><div class="btnBox btnBox_y">はい</div></a>
-                    <a href="#3" onclick="show(3)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
+                    <a href="#103" onclick="show(103)" class="qabtn"><div class="btnBox btnBox_y">はい</div></a>
+                    <a href="#2" onclick="show(2)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
                 </div>
             </li>
             <li id="2" class="question" style="display:none;">
                 <a name="#"></a>
-                <div class="qbox"><span  class="q">Q.</span>お米の香りを楽しみたいですか？</div>
+                <div class="qbox">お米をお供（おかずやふりかけ）が無くても食べられる</div>
                 <div class="qabox">
                     <a href="#101" onclick="show(101)" class="qabtn"><div class="btnBox btnBox_y">はい</div></a>
-                    <a href="#102" onclick="show(102)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
+                    <a href="#3" onclick="show(3)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
                 </div>
             </li>
             <li id="3" class="question" style="display:none;">
                 <a name="#"></a>
-                <div class="qbox"><span  class="q">Q.</span>〜ですか？</div>
+                <div class="qbox">和食よりも洋食の方が好きだ</div>
                 <div class="qabox">
-                    <a href="#103" onclick="show(103)" class="qabtn"><div class="btnBox btnBox_y">YES</div></a>
-                    <a href="#104" onclick="show(104)" class="qabtn"><div class="btnBox btnBox_n">NO</div></a>
+                    <a href="#102" onclick="show(102)" class="qabtn"><div class="btnBox btnBox_y">はい</div></a>
+                    <a href="#104" onclick="show(104)" class="qabtn"><div class="btnBox btnBox_n">いいえ</div></a>
                 </div>
             </li>
             </ul>
@@ -52,58 +49,52 @@
                         <p>あなたに勧めるおこめは<span class="fs-18"><span class="bg-y">『コシヒカリ』</span></span>です！</p>
                         </div>
                     <div class="txt">
-                        <div class="img">
-                        <%= image_tag '' %></div>
-                        <p>説明文</p>
-<p>詳細</p>
+                        <p>言わずと知れた新潟県の有名なお米</p>
+                        <p>しっかりした甘み、香りの良さ、もっちりした食感が特徴</p>
+                        <p>白米として食べるのがおすすめ。和食の主食にぜひ</p><br>
                         <p><%= link_to "一覧に戻る", posts_path %></p>
                     </div>
                     </div>
                 </div>
+
                 <div id="102" style="display:none;" class="answer point_box">
                     <div class="box">
                         <div class="title">
-                        <p>あなたに勧める〇〇は<span class="fs-18"><span class="bg-y">『〇〇』</span></span>です！</p>
+                        <p>あなたに勧めるおこめは<span class="fs-18"><span class="bg-y">『つきあかり』</span></span>です！</p>
                         </div>
                     <div class="txt">
-                        <div class="img">
-                        <%= image_tag '' %></div>
-                        <p>説明文「タイトル」</p>
-<p>詳細を記載</p>
-<p>詳細を記載</p>
-<p>詳細を記載</p>
+                        <p>あまり聞いたことがないかもしれないけど、これも新潟県のお米</p>
+                        <p>粒がしっかりしていて、大きいのが特徴</p>
+                        <p>揚げ物など味付けのしっかりした洋食にぜひ</p>
                         <p><%= link_to "一覧に戻る", posts_path %></p>
                     </div>
                     </div>
                 </div>
+
                 <div id="103" style="display:none;" class="answer point_box">
                     <div class="box">
                         <div class="title">
-                        <p>あなたに勧める〇〇は<span class="fs-18"><span class="bg-y">『〇〇』</span></span>です！</p>
+                        <p>あなたに勧めるおこめは<span class="fs-18"><span class="bg-y">『こしいぶき』</span></span>です！</p>
                         </div>
-                    <div class="txt">
-                        <div class="img">
-                        <%= image_tag '' %></div>
-                        <p>説明文「タイトル」</p>
-<p>詳細を記載</p>
-<p>詳細を記載</p>
-<p>詳細を記載</p>
+                        <p>毎日の食事に最適な新潟県のお米</p>
+                        <p>コシヒカリに比べてあっさりした味が特徴</p>
+                        <p>味、香り、つやはコシヒカリに近い</p>
+                        <p>どんな料理にも合い、価格もお手頃なので家庭の食卓にぜひ</p>
                         <p><%= link_to "一覧に戻る", posts_path %></p>
                     </div>
                     </div>
                 </div>
+
                 <div id="104" style="display:none;" class="answer point_box">
                     <div class="box">
                         <div class="title">
-                        <p>あなたに勧める〇〇は<span class="fs-18"><span class="bg-y">説明文「タイトル」</span></span>です！</p>
+                        <p>あなたに勧めるおこめは<span class="fs-18"><span class="bg-y">「新之助」</span></span>です！</p>
                         </div>
                     <div class="txt">
-                        <div class="img">
-                        <%= image_tag '' %></div>
-                        <p>説明文「タイトル」</p>
-<p>詳細を記載</p>
-<p>詳細を記載</p>
-<p>詳細を記載</p>
+                        <p>新潟県でも新しく登場したお米</p>
+                        <p>甘みがしっかりしていて、冷めてもおいしさと甘みが続くのが特徴</p>
+                        <p>おにぎりとしてぜひ</p>
+                        <p><%= link_to "一覧に戻る", posts_path %></p>
                     </div>
                     </div>
                 </div>

@@ -4,10 +4,13 @@
     margin: 10px auto;
 }
 
-.post2 {
-    border-top: solid #f8b600;
-    margin-top: 10px;
-    padding-top: 20px;
+.post22 {
+    border: 2px solid #f8b600;
+    border-radius: 10px;
+    margin: 2em 0.5em ;
+    background-color: white;/*ボックス背景色*/
+    padding:2.5em 2em 2em;/*ボックス内側余白*/
+    position:relative;/*配置(ここを基準に)*/
 }
 
 h4 {
@@ -21,4 +24,12 @@ h4 {
     margin: 5px;
     display: flex;
     justify-content: space-between;    
+}
+
+.like{
+    margin-top: 40px;
+}
+
+.comment-wrapper{
+    margin-top: 40px;
 }

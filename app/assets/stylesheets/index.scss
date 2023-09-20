@@ -60,3 +60,45 @@
    33% { left: -792px }
   100% { left: -792px }
  }
+
+.postslist6{
+  display: flex;
+  justify-content: center;
+}
+.postslist5{
+  display: inline-block;
+}
+.postslist4{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+.postslist4::before{
+  margin: 2em 0.5em ;
+  padding:2.5em 2em 2em;
+  content:"";
+  display: block;
+  width:100vw;
+  order:1;
+}
+.postslist4::after{
+  margin: 2em 0.5em ;
+  padding:2.5em 2em 2em;
+  content:"";
+  display: block;
+  width:100vw;
+}
+
+.post{
+  border: 2px solid #f8b600;
+  border-radius: 10px;
+  margin: 2em 0.5em ;
+  background-color: white;/*ボックス背景色*/
+  padding:2.5em 1em 2em;/*ボックス内側余白*/
+  position:relative;/*配置(ここを基準に)*/
+  height: 265px;
+  width: 195px;
+}
+
+
+

@@ -1,4 +1,7 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<link rel="stylesheets" type="text/css" href="mypage_edit.scss">
+
+<div class="edit">
+  <h2>ユーザ情報の編集</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -20,10 +23,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password",placeholder:"新規パスワード" %>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"新規パスワード" %><br>
+
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em>最低<%= @minimum_password_length %>文字</em><br>
     <% end %>
   </div>
 
@@ -40,9 +44,13 @@
   </div>
 <% end %>
 
-<h3>アカウントを削除する</h3>
-<div><%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+<div class="delete">
+<h2>アカウントを削除する</h2><br>
+  <%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
+</div>
 
 <%= link_to "一覧に戻る", posts_path %>
+
+</div>
 
 
