@@ -1,0 +1,22 @@
+databases:
+  - name: myricekome_DB
+    databaseName: myricekome_db
+    user: myricekome
+    region: singapore
+
+services:
+  - type: web
+    name: myricekome
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: myricekome_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
