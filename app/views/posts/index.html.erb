@@ -20,12 +20,17 @@
 </div>
 
 <div class="posts-container">
-<h3 id="ichiran">一覧ページ</h3>
-<%= link_to "新規投稿へ", new_post_path %>
+<h3 id="ichiran">投稿一覧</h3>
 
-<% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
-<% end %>
+<div class="btn02">
+  <a href="/posts/new">新規投稿</a>
+</div><br>
+
+<div class="btn02">
+  <% if user_signed_in? %>
+  <a href="/users/<%= current_user.id %>">マイページへ</a>
+  <% end %>
+</div>
 
 <div class="postslist6">
   <div class="postslist5">
@@ -112,7 +117,10 @@
 
   
 <% end %>
-<%= link_to "診断", perfumes_path %>
+
+<div class="btn02">
+<a href="perfumes">診断</a>
+</div>
 
 <html>
 

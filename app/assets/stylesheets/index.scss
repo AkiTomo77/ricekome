@@ -2,6 +2,8 @@
     width: 50%;
     margin: 10px auto;
   }
+
+
   h3 {
     width: 100px;
     margin: 30px auto;
@@ -31,7 +33,7 @@
     position   : relative;
     overflow   : hidden;
     margin     : auto;
-    margin-top : 65px;
+    margin-top : 100px;
     width      : 792px;
     height     : 522px;    
     background : white;
@@ -99,6 +101,36 @@
   height: 265px;
   width: 195px;
 }
+
+.button{
+  font-weight: 700;
+  color: #f8b600;
+  border-radius: 100vh;
+  border-color: #f8b600;
+  background-color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+  font-feature-settings: "palt";
+  margin-top: 10px;
+}
+
+.btn02 {
+  display       : inline-block;
+  border-radius : 100vh;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 10px 60px;   /* 余白       */
+  background    : #f8b600;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  margin: 10px;
+}
+
+
+
+
 
 
 
