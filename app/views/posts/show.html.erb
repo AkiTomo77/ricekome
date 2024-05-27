@@ -61,16 +61,19 @@
       <br>
   <% end %>
 
-  <p><% if user_signed_in? %>
-    <%= form_with(model: [@post, @comment], local: true) do |f| %>
-      <%= f.text_area :content %>
-      <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
-      <% end %>
-    <% end %>
-  <% end %>
-</div></p><br>
+   <details>
+    <summary>コメントする</summary>
+      <p><% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |f| %>
+          <%= f.text_area :content %>
+          <%= button_tag type: "submit" do %>
+            <i class="far fa-comments"></i> コメントする
+          <% end %>
+        <% end %>
+      <% end %></p>
+   </details>
 
+</div><br>
 <p><%= link_to "一覧に戻る", posts_path %></p><br><br>
 
 </div>
